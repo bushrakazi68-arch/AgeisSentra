@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, Eye, Zap, Lock, Ghost, Activity } from "lucide-react";
+import { Shield, ArrowRight, Eye, Zap, Lock, Ghost, Activity, Sun, Moon } from "lucide-react";
 
 const features = [
   { icon: Eye,      label: "Real-time Monitoring" },
@@ -73,6 +73,26 @@ export default function Landing({ dark, setDark }) {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             System Active
           </motion.div>
+
+          {/* Dark / Light toggle */}
+          <motion.button
+            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+            onClick={() => setDark(!dark)}
+            className="w-9 h-9 flex items-center justify-center rounded-xl
+              dark:bg-purple-800/40 bg-purple-100
+              dark:text-purple-300 text-purple-600
+              dark:hover:bg-purple-700/50 hover:bg-purple-200 transition-colors"
+          >
+            <motion.div
+              key={dark ? "sun" : "moon"}
+              initial={{ rotate: -30, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              {dark ? <Sun size={16} /> : <Moon size={16} />}
+            </motion.div>
+          </motion.button>
+
           <motion.button
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/dashboard")}
@@ -112,11 +132,12 @@ export default function Landing({ dark, setDark }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight
+          className="font-handwriting font-bold mb-6 leading-tight
             dark:text-white text-purple-950"
+          style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
         >
           The Shield for<br />
-          <span className="gradient-text">Autonomous Agents</span>
+          <span className="gradient-text font-handwriting font-bold">Autonomous Agents</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -124,7 +145,7 @@ export default function Landing({ dark, setDark }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-lg dark:text-purple-300 text-purple-600 max-w-xl mb-10 leading-relaxed"
+          className="font-handwriting text-2xl dark:text-purple-300 text-purple-600 max-w-xl mb-10 leading-relaxed"
         >
           AegisSentra monitors every action your AI agents take in real time —
           verifying, blocking, and tracing threats before damage is done.
