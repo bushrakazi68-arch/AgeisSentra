@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl;
+  }
+  .glass-card-light {
+    @apply backdrop-blur-md bg-purple-50/80 border border-purple-200 rounded-2xl;
+  }
+  .stat-card {
+    @apply rounded-2xl p-5 flex flex-col gap-1;
+  }
+  .sidebar-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-xl cursor-pointer transition-all duration-200;
+  }
+  .agent-status-dot {
+    @apply w-2.5 h-2.5 rounded-full inline-block;
+  }
+  .trust-bar {
+    @apply h-2 rounded-full transition-all duration-700;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-purple-400 rounded-full; }
+
+/* Glow effect */
+.purple-glow {
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.3);
+}
+.purple-glow-sm {
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.2);
+}
