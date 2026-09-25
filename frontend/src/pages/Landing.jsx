@@ -124,7 +124,7 @@ export default function Landing({ dark, setDark }) {
             transition={{ repeat: Infinity, duration: 1.5 }}
             className="w-1.5 h-1.5 rounded-full bg-emerald-400"
           />
-          PS002 · RepoForge 2026 · Runtime Integrity System
+          Runtime Integrity System — Active
         </motion.div>
 
         {/* Heading */}
@@ -132,12 +132,12 @@ export default function Landing({ dark, setDark }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="font-handwriting font-bold mb-6 leading-tight
+          className="font-serif-display font-bold mb-6 leading-tight
             dark:text-white text-purple-950"
           style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
         >
           The Shield for<br />
-          <span className="gradient-text font-handwriting font-bold">Autonomous Agents</span>
+          <span className="gradient-text font-serif-display font-bold">Autonomous Agents</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -259,7 +259,7 @@ export default function Landing({ dark, setDark }) {
       </main>
 
       <footer className="relative z-10 text-center py-6 text-xs dark:text-purple-700 text-purple-400">
-        RepoForge 2026 · PS002 · AegisSentra · Built with ❤️
+        AegisSentra · Runtime Integrity for Autonomous Agents
       </footer>
     </div>
   );
